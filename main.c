@@ -11,9 +11,8 @@ void gerarRotaAleatoria(int rota[], int num_cidades) {
     for (int i = 0; i < num_cidades; i++) {
         rota[i] = i; // Inicializa a rota em ordem
     }
-
     // Embaralha a rota
-    srand(time(NULL)); // Inicializa o gerador de números aleatórios
+    srand(time(NULL)); // Inicializa o gerador de números aleatórios (srand(time null) faz com q a semente gerada muda a cada seg
     for (int i = num_cidades - 1; i > 0; i--) {
         int j = rand() % (i + 1);
         int temp = rota[i];
@@ -50,24 +49,23 @@ void leiaRotas(int matriz_custo[MAX_CIDADES][MAX_CIDADES], char cidades[MAX_CIDA
 
     fgets(linha, sizeof(linha), arquivo); // Ignora o cabeçalho
 
-    while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+    while (fgets(linha, sizeof(linha), arquivo) != NULL) {   //A função fgets() lê uma linha do arquivo e a armazena na variável linha
         char *token = strtok(linha, ",");
-        strcpy(origem, token);
+        strcpy(origem, token);  //A função strcpy() copia o conteúdo do token (que foi o nome da cidade de origem) para a variável origem
+
+        token = strtok(NULL, ",");  //é uma função usada para dividir a string em "tokens", com base em um delimitador.no caso ,
+        strcpy(destino, token);  //A cidade de destino (que foi obtida no strtok() anterior) é copiada para a variável destino.
 
         token = strtok(NULL, ",");
-        strcpy(destino, token);
+        custo = atoi(token); //A função atoi() converte o token (que é uma string representando um número)
 
-        token = strtok(NULL, ",");
-        custo = atoi(token);
-
-        int posOrigem = posicaoCidade(cidades, origem);
+        int posOrigem = posicaoCidade(cidades, origem); //
         int posDestino = posicaoCidade(cidades, destino);
 
-        if (posOrigem != -1 && posDestino != -1) {
+        if (posOrigem != -1 && posDestino != -1) { //Esse if verifica se tanto a cidade de origem quanto a cidade de destino existem no array de cidades
             matriz_custo[posOrigem][posDestino] = custo;
             matriz_custo[posDestino][posOrigem] = custo; // Matriz simétrica
         }
-        
     }
 }
 
@@ -78,15 +76,14 @@ int calcularCustoRota(int rota[], int matrizCusto[MAX_CIDADES][MAX_CIDADES], int
         int origem = rota[i];
         int destino = rota[i + 1];
         custoTotal += matrizCusto[origem][destino];
-    } 
-    printf("%d --> %d  = %d\n", origem, destino, matrizCusto[origem][destino]);
+    }
     // Retorna ao ponto inicial
     custoTotal += matrizCusto[rota[num_cidades - 1]][rota[0]];
     return custoTotal;
 }
 
 // Função para inverter um segmento da rota
-void inverterSegmento(int rota[], int inicio, int fim) {
+void inverterSegmento(int rota[], int inicio, int fim) {  //A função inverterSegmento() inverte os elementos de um vetor entre dois índices dados
     while (inicio < fim) {
         int temp = rota[inicio];
         rota[inicio] = rota[fim];
@@ -98,16 +95,22 @@ void inverterSegmento(int rota[], int inicio, int fim) {
 
 // Função para otimizar a rota com o algoritmo 2-opt
 void otimizar2opt(int rota[], int matrizCusto[MAX_CIDADES][MAX_CIDADES], int num_cidades) {
+    /*O algoritmo tenta trocar segmentos da rota (ou caminho)
+    de forma que o custo total da rota diminua. Ele faz isso trocando duas arestas */
+
     int melhorou = 1;
     while (melhorou) {
         melhorou = 0;
         int custoAtual = calcularCustoRota(rota, matrizCusto, num_cidades);
 
+        //percorre todas as cidades, começando da cidade 1 (ignorando a cidade 0)
+
         for (int i = 1; i < num_cidades - 2; i++) {
             for (int j = i + 1; j < num_cidades - 1; j++) {
-                int rotaTemp[MAX_CIDADES];
-                memcpy(rotaTemp, rota, num_cidades * sizeof(int));
+                int rotaTemp[MAX_CIDADES];  /* A função cria uma cópia da rota atual (rotaTemp), para que as modificações
+                sejam feitas nesta cópia e não na rota original */
 
+                memcpy(rotaTemp, rota, num_cidades * sizeof(int));  /* A função memcpy() copia o conteúdo da rota original para rotaTemp */
                 inverterSegmento(rotaTemp, i, j);
                 int novoCusto = calcularCustoRota(rotaTemp, matrizCusto, num_cidades);
 
@@ -149,12 +152,37 @@ int main() {
     leiaRotas(matrizCusto, cidades, arquivo);
     fclose(arquivo);
 
-    // Gerar uma rota aleatória
+    // Exibir cidades com números para o usuário escolher
+    printf("Cidades disponiveis:\n");
+    for (int i = 0; i < countCidades; i++) {
+        printf("%d. %s\n", i + 1, cidades[i]);
+    }
+
+    // Escolher a cidade de origem e destino
+    int origem, destino;
+    printf("\nEscolha o numero da cidade de origem (1 a %d): ", countCidades);
+    scanf("%d", &origem);
+    origem--;  // Ajusta para o índice correto (0 a N-1)
+
+    printf("Escolha o numero da cidade de destino (1 a %d): ", countCidades);
+    scanf("%d", &destino);
+    destino--;  // Ajusta para o índice correto (0 a N-1)
+
+    if (origem < 0 || origem >= countCidades || destino < 0 || destino >= countCidades) {
+        printf("Cidade invalida. O numero deve ser entre 1 e %d.\n", countCidades);
+        return 1;
+    }
+
+    // Gerar uma rota com a cidade de origem e destino fixas
     int rota[MAX_CIDADES];
     gerarRotaAleatoria(rota, countCidades);
 
+    // Coloca a cidade de origem no início e destino no final
+    rota[0] = origem;
+    rota[countCidades - 1] = destino;
+
     // Calcular o custo da rota inicial
-    printf("Rota inicial:\n");
+    printf("\nRota inicial:\n");
     for (int i = 0; i < countCidades; i++) {
         printf("%s\n ", cidades[rota[i]]);
     }
@@ -169,8 +197,6 @@ int main() {
         printf("%s\n ", cidades[rota[i]]);
     }
     printf("\nCusto otimizado: %d\n", calcularCustoRota(rota, matrizCusto, countCidades));
-
-    
 
     return 0;
 }
