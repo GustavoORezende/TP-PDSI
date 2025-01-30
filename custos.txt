@@ -1,0 +1,194 @@
+ORIGEM,DESTINO,CUSTO
+Buenos Aires,Córdoba,700
+Buenos Aires,Rosário,400
+Buenos Aires,La Plata,50
+Buenos Aires,Mar del Plata,400
+Buenos Aires,San Miguel de Tucumán,1200
+Buenos Aires,Salta,1500
+Buenos Aires,Santa Fé de la Vera Cruz,400
+Buenos Aires,Vicente López,20
+Buenos Aires,Corrientes,1000
+Buenos Aires,Pilar,60
+Buenos Aires,Bahía Blanca,600
+Buenos Aires,Resistencia,900
+Buenos Aires,Posadas,1100
+Buenos Aires,San Salvador de Jujuy,1600
+Buenos Aires,Santiago del Estero,1300
+Buenos Aires,Paraná,500
+Buenos Aires,Merlo,30
+Buenos Aires,Neuquén,1200
+Buenos Aires,Quilmes,40
+Córdoba,Rosário,300
+Córdoba,La Plata,750
+Córdoba,Mar del Plata,800
+Córdoba,San Miguel de Tucumán,600
+Córdoba,Salta,1100
+Córdoba,Santa Fé de la Vera Cruz,400
+Córdoba,Vicente López,700
+Córdoba,Corrientes,1300
+Córdoba,Pilar,400
+Córdoba,Bahía Blanca,900
+Córdoba,Resistencia,1000
+Córdoba,Posadas,1200
+Córdoba,San Salvador de Jujuy,1400
+Córdoba,Santiago del Estero,800
+Córdoba,Paraná,500
+Córdoba,Merlo,600
+Córdoba,Neuquén,1300
+Córdoba,Quilmes,750
+Rosário,La Plata,650
+Rosário,Mar del Plata,700
+Rosário,San Miguel de Tucumán,900
+Rosário,Salta,1300
+Rosário,Santa Fé de la Vera Cruz,300
+Rosário,Vicente López,400
+Rosário,Corrientes,1000
+Rosário,Pilar,350
+Rosário,Bahía Blanca,800
+Rosário,Resistencia,1100
+Rosário,Posadas,1200
+Rosário,San Salvador de Jujuy,1500
+Rosário,Santiago del Estero,1000
+Rosário,Paraná,300
+Rosário,Merlo,450
+Rosário,Neuquén,1100
+Rosário,Quilmes,500
+La Plata,Mar del Plata,450
+La Plata,San Miguel de Tucumán,1150
+La Plata,Salta,1450
+La Plata,Santa Fé de la Vera Cruz,350
+La Plata,Vicente López,30
+La Plata,Corrientes,950
+La Plata,Pilar,100
+La Plata,Bahía Blanca,550
+La Plata,Resistencia,850
+La Plata,Posadas,950
+La Plata,San Salvador de Jujuy,1400
+La Plata,Santiago del Estero,1100
+La Plata,Paraná,350
+La Plata,Merlo,80
+La Plata,Neuquén,1050
+La Plata,Quilmes,60
+Mar del Plata,San Miguel de Tucumán,1300
+Mar del Plata,Salta,1600
+Mar del Plata,Santa Fé de la Vera Cruz,600
+Mar del Plata,Vicente López,450
+Mar del Plata,Corrientes,1200
+Mar del Plata,Pilar,450
+Mar del Plata,Bahía Blanca,200
+Mar del Plata,Resistencia,1100
+Mar del Plata,Posadas,1200
+Mar del Plata,San Salvador de Jujuy,1700
+Mar del Plata,Santiago del Estero,1400
+Mar del Plata,Paraná,450
+Mar del Plata,Merlo,500
+Mar del Plata,Neuquén,1400
+Mar del Plata,Quilmes,550
+San Miguel de Tucumán,Salta,400
+ORIGEM,DESTINO,CUSTO
+San Miguel de Tucumán,Salta,400
+San Miguel de Tucumán,Santa Fé de la Vera Cruz,600
+San Miguel de Tucumán,Vicente López,800
+San Miguel de Tucumán,Corrientes,1000
+San Miguel de Tucumán,Pilar,700
+San Miguel de Tucumán,Bahía Blanca,1100
+San Miguel de Tucumán,Resistencia,1200
+San Miguel de Tucumán,Posadas,1300
+San Miguel de Tucumán,San Salvador de Jujuy,500
+San Miguel de Tucumán,Santiago del Estero,300
+San Miguel de Tucumán,Paraná,800
+San Miguel de Tucumán,Merlo,900
+San Miguel de Tucumán,Neuquén,1400
+San Miguel de Tucumán,Quilmes,600
+Salta,Santa Fé de la Vera Cruz,500
+Salta,Vicente López,700
+Salta,Corrientes,900
+Salta,Pilar,600
+Salta,Bahía Blanca,1000
+Salta,Resistencia,1100
+Salta,Posadas,1200
+Salta,San Salvador de Jujuy,200
+Salta,Santiago del Estero,400
+Salta,Paraná,700
+Salta,Merlo,800
+Salta,Neuquén,1300
+Salta,Quilmes,500
+ORIGEM,DESTINO,CUSTO
+Santa Fé de la Vera Cruz,Vicente López,400
+Santa Fé de la Vera Cruz,Corrientes,700
+Santa Fé de la Vera Cruz,Pilar,300
+Santa Fé de la Vera Cruz,Bahía Blanca,800
+Santa Fé de la Vera Cruz,Resistencia,900
+Santa Fé de la Vera Cruz,Posadas,1000
+Santa Fé de la Vera Cruz,San Salvador de Jujuy,1400
+Santa Fé de la Vera Cruz,Santiago del Estero,1100
+Santa Fé de la Vera Cruz,Paraná,200
+Santa Fé de la Vera Cruz,Merlo,500
+Santa Fé de la Vera Cruz,Neuquén,1200
+Santa Fé de la Vera Cruz,Quilmes,450
+Vicente López,Corrientes,300
+Vicente López,Pilar,400
+Vicente López,Bahía Blanca,700
+Vicente López,Resistencia,800
+Vicente López,Posadas,900
+Vicente López,San Salvador de Jujuy,1300
+Vicente López,Santiago del Estero,1000
+Vicente López,Paraná,100
+Vicente López,Merlo,300
+Vicente López,Neuquén,1100
+Vicente López,Quilmes,350
+Corrientes,Pilar,950
+Corrientes,Bahía Blanca,1400
+Corrientes,Resistencia,300
+Corrientes,Posadas,400
+Corrientes,San Salvador de Jujuy,800
+Corrientes,Santiago del Estero,500
+Corrientes,Paraná,700
+Corrientes,Merlo,800
+Corrientes,Neuquén,1300
+Corrientes,Quilmes,600
+Pilar,Bahía Blanca,500
+Pilar,Resistencia,800
+Pilar,Posadas,900
+Pilar,San Salvador de Jujuy,1300
+Pilar,Santiago del Estero,1000
+Pilar,Paraná,100
+Pilar,Merlo,300
+Pilar,Neuquén,1100
+Pilar,Quilmes,350
+Bahía Blanca,Resistencia,1100
+Bahía Blanca,Posadas,1200
+Bahía Blanca,San Salvador de Jujuy,1700
+Bahía Blanca,Santiago del Estero,1400
+Bahía Blanca,Paraná,450
+Bahía Blanca,Merlo,500
+Bahía Blanca,Neuquén,1400
+Bahía Blanca,Quilmes,550
+Resistencia,Posadas,400
+Resistencia,San Salvador de Jujuy,800
+Resistencia,Santiago del Estero,500
+Resistencia,Paraná,700
+Resistencia,Merlo,800
+Resistencia,Neuquén,1300
+Resistencia,Quilmes,600
+Posadas,San Salvador de Jujuy,900
+Posadas,Santiago del Estero,700
+Posadas,Paraná,900
+Posadas,Merlo,1000
+Posadas,Neuquén,1400
+Posadas,Quilmes,800
+San Salvador de Jujuy,Santiago del Estero,400
+San Salvador de Jujuy,Paraná,700
+San Salvador de Jujuy,Merlo,800
+San Salvador de Jujuy,Neuquén,1300
+San Salvador de Jujuy,Quilmes,600
+Santiago del Estero,Paraná,300
+Santiago del Estero,Merlo,400
+Santiago del Estero,Neuquén,1100
+Santiago del Estero,Quilmes,350
+Paraná,Merlo,100
+Paraná,Neuquén,900
+Paraná,Quilmes,250
+Merlo,Neuquén,800
+Merlo,Quilmes,150
+Neuquén,Quilmes,950
